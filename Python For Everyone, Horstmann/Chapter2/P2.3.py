@@ -1,5 +1,5 @@
-#Write a program that reads a number and displays the square, cube, and fourth
-#power. Use the  ** operator only for the fourth power.
+# Write a program that reads a number and displays the square, cube, and fourth
+# power. Use the  ** operator only for the fourth power.
 
 
 number = float(input("Enter a number: "))
