@@ -18,7 +18,7 @@ int main()
 
     nSquare = n*n;
     nCube = pow(n, 3);
-    nQuad = pow(n, 4;
+    nQuad = pow(n, 4);
     cout << "The square, cube and quad of "<<n<<" is "<< nSquare << ", " << nCube << ", " << nQuad;
 
     return 0;
