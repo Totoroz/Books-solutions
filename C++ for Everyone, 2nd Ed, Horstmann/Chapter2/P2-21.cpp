@@ -37,7 +37,7 @@ int main()
     int hours3 = difference / 60;
     int minutes3 = difference % 60;
 
-    cout << "Differencne is: " << hours3 << " hours and " << minutes3 << " minutes";
+    cout << "Difference is: " << hours3 << " hours and " << minutes3 << " minutes";
 
     return 0;
 }
