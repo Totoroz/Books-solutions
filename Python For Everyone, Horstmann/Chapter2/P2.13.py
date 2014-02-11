@@ -6,3 +6,10 @@
 # Hint: Read the input as a string. Turn the strings consisting of the first two charac-
 # ters and the last three characters into numbers, and combine them.
 
+userInput = float(input("Please enter an integer between 10,000 and 99,999: "))
+
+strUserInput = str(userInput)
+decimal = strUserInput[:2]
+float = strUserInput[3:]
+
+print(decimal + float)
