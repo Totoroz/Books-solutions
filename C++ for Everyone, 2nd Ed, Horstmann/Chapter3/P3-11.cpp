@@ -1,18 +1,18 @@
-Write a program that takes user input describing a playing card in the following
-shorthand notation :
-A Ace
-2 ... 10 Card values
-J Jack
-Q Queen
-K King
-D Diamonds
-H Hearts
-S Spades
-C Clubs
-120 Chapter 3 Decisions
-Your program should print the full description of the card.For example,
-Enter the card notation : QS
-Queen of Spades
+// Write a program that takes user input describing a playing card in the following
+// shorthand notation :
+// A Ace
+// 2 ... 10 Card values
+// J Jack
+// Q Queen
+// K King
+// D Diamonds
+// H Hearts
+// S Spades
+// C Clubs
+// 120 Chapter 3 Decisions
+// Your program should print the full description of the card.For example,
+// Enter the card notation : QS
+// Queen of Spades
 
 #include <iostream>
 #include <string>
