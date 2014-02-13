@@ -1,6 +1,7 @@
-#  The boiling point of water drops by about one degree Celsius for every 300 meters
-# (or 1,000 feet) of altitude. Improve the program of Exercise P3.9 to allow the user to
-# supply the altitude in meters or feet.
+# Add error handling to Exercise P3.10. If the user provides an invalid unit for the
+# altitude, print an error message and end the program.
+
+from sys import exit
 
 FREEZE_CELSIUS = 0
 FREEZE_FAHRENHEIT = 32
@@ -16,8 +17,11 @@ if type == "C":
     if units == "M":
         boil_celsius -= (altitude / 300)
 
-    else:
+    elif units == "F":
         boil_celsius -= (altitude / 1000)
+
+    else:
+        exit("Invalid unit for the altitude. Exiting...")
 
     if temperature <= FREEZE_CELSIUS:
         print("Solid")
@@ -32,8 +36,11 @@ else:
     if units == "M":
         boil_fahrenheit -= (altitude / 300)
 
-    else:
+    elif units == "F":
         boil_fahrenheit -= (altitude / 1000)
+
+    else:
+        exit("Invalid unit for the altitude. Exiting...")
 
     if temperature <= FREEZE_FAHRENHEIT:
         print("Solid")
