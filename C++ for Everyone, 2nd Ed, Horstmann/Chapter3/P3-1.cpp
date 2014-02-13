@@ -25,8 +25,9 @@ int main()
             cout << "Water is liquid.\n";
         }
         else if(temperature >= 100)
+        {
             cout << "Water is gaseous.\n";
-                    {
+                    
         }
         else
         {
