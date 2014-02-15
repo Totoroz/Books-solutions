@@ -6,23 +6,18 @@
 #    d.  All adjacent duplicates. For example, if the input is 1 3 3 4 5 5 6 6 6 2, the
 #    program should print 3 5 6.
 
-# imports
-from sys import exit
-
-list = []
 stop = False
+sum = 0
+
+print("Enter a series of number(Stop/stop to stop)")
+
 while not stop:
-    inputN = str(input("Enter a number:(Stop/stop to stop): "))
+    inputN = str(input("Input: "))
+
     if inputN == "stop" or inputN == "Stop":
         stop = True
 
-    else:
-        if inputN.isdigit():
-            inputN = int(inputN)
-            list.append(inputN)
-
-if not list:
-    exit("List is empty")
-
-print("Largest:", max(list))
-print("Smallest:", min(list))
+    elif inputN.isdigit():
+        inputN = int(inputN)
+        sum += inputN
+        print("Output:", sum)

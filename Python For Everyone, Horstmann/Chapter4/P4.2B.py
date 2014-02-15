@@ -6,23 +6,23 @@
 #    d.  All adjacent duplicates. For example, if the input is 1 3 3 4 5 5 6 6 6 2, the
 #    program should print 3 5 6.
 
-# imports
-from sys import exit
+numEven = 0
+numOdd = 0
 
-list = []
 stop = False
+
 while not stop:
     inputN = str(input("Enter a number:(Stop/stop to stop): "))
-    if inputN == "stop" or inputN == "Stop":
+
+    if inputN == "Stop" or inputN == "stop":
         stop = True
 
-    else:
-        if inputN.isdigit():
-            inputN = int(inputN)
-            list.append(inputN)
+    elif inputN.isdigit():
+        inputN = int(inputN)
+        if inputN % 2 == 0:
+            numEven += 1
+        else:
+            numOdd += 1
 
-if not list:
-    exit("List is empty")
-
-print("Largest:", max(list))
-print("Smallest:", min(list))
+print("Number of even numbers:", numEven)
+print("Number of odd numbers:", numOdd)
