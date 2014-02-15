@@ -5,16 +5,12 @@
 #     d.  The number of digits in the string.
 #     e.  The positions of all vowels in the string.
 
+
 inputString = str(input("Enter a string: "))
-outputString = ""
-# saving time writing long statements
-vowels = ('a','e','i','o','u','A','E','I','O','U')
+numDigits = 0
 
 for i in range(len(inputString)):
-    if inputString[i] in vowels:
-        outputString += "_"
+    if inputString[i].isdigit():
+        numDigits += 1
 
-    else:
-        outputString += inputString[i]
-
-print(outputString)
+print("Number of digits:", numDigits)

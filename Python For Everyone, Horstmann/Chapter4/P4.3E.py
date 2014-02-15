@@ -6,15 +6,15 @@
 #     e.  The positions of all vowels in the string.
 
 inputString = str(input("Enter a string: "))
-outputString = ""
+positions = ""
 # saving time writing long statements
 vowels = ('a','e','i','o','u','A','E','I','O','U')
 
 for i in range(len(inputString)):
     if inputString[i] in vowels:
-        outputString += "_"
+            positions += str(i) + "-"
 
-    else:
-        outputString += inputString[i]
 
-print(outputString)
+# fix for the last dash in the positions string
+positions = positions[:-1]
+print(positions)
