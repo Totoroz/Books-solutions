@@ -1,9 +1,16 @@
 # Given the list values = [] , write code that fills the list with each set of numbers below.
-# c.0   0   0   0   0   0   0   0   0   0
+# d.1   4   9   16   9   7   4   9   11
 
 list = []
-
-for i in range(11):
-    list.append(0)
+# there's no pattern
+list.append(1)
+list.append(4)
+list.append(9)
+list.append(16)
+list.append(9)
+list.append(7)
+list.append(4)
+list.append(9)
+list.append(11)
 
 print(list)
