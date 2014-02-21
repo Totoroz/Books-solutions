@@ -16,5 +16,7 @@ while userInput.upper() != "S":
 
 
 # output
+list.reverse()
+print("Printing the items entered")
 for element in list:
     print(element)
