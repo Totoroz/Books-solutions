@@ -52,6 +52,11 @@ def main():
     print("List A", exampleListA)
     print("List B", exampleListB)
 
+    print("Expected False")
+    print("Are they identical:", sameSet(exampleListA, exampleListB))
+
+    exampleListB = [ 11, 1, 4, 9, 16, 9, 7, 4, 9 ]
+    print("Expected True")
     print("Are they identical:", sameSet(exampleListA, exampleListB))
 
 # PROGRAM RUN
