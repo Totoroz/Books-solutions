@@ -27,12 +27,11 @@ def inputLabels(list):
     inputN = ""
 
     while inputN != "0":
-        try:
-            inputN = str(input())
-            list.append(inputN)
-        except ValueError:
-            break
+        inputN = str(input())
+        list.append(inputN)
 
+    # clears the 0 from the list
+    list.pop()
     return list
 
 def displayCharts(list, labels):
@@ -69,7 +68,7 @@ def main():
     print("List", inputList)
     print("Labels", labelsList)
 
-    print("\n Bars")
+    print("\nBars")
     displayCharts(inputList, labelsList)
 
 # PROGRAM RUN
