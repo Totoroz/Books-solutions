@@ -13,7 +13,6 @@ from sys import argv
 LIMIT = 50.0
 
 def main() :
-   
    # MODIFIED
    if argv != "":
       inputFile = open(argv[1], "r")
@@ -35,7 +34,7 @@ def main() :
       boyPercent = float(dataFields[2].rstrip("%"))
       girlName = dataFields[3]
       girlPercent = float(dataFields[4].rstrip("%"))
-            
+
       # Process the data.            
       print("%3d " % rank, end="")
       boyTotal = processName(boyName, boyPercent, boyTotal)
