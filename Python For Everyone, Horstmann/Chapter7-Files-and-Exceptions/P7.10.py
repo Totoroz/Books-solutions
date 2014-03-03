@@ -1,3 +1,7 @@
+# Get the data for baby names in prior years from the Social Security Administration.
+# Paste the table data in files named babynames2010.txt , etc. Modify the babynames.py
+# program so that it prompts the user for a file name. Can you spot a trend in the
+# frequencies?	
 ##
 #  This program displays the most common baby names. Half of boys and girls in
 #  the United States were given these names in 2011.
