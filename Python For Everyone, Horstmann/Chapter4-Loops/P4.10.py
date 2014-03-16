@@ -4,7 +4,7 @@
 
 #  situations when Y is not a vowel are not handled.
 inputWord = str(input("Enter a word: "))
-vowels = ('a','e','i','o','u','y','A','E','I','O','U','Y')
+vowels = ('a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y')
 
 numVowels = 0
 

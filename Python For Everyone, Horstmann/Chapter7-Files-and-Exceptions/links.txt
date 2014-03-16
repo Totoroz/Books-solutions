@@ -1,0 +1,17 @@
+www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd
+www.w3.org/1999/xhtml
+www.uni-kiel.de/
+www.kiel.de/
+www.syr.edu
+www.umich.edu
+www.mathcs.sjsu.edu
+www.java.net/blogs/cayhorstmann/
+www.sjsu.edu/people/cay.horstmann
+www.family-horstmann.net
+corejsf.com
+www.stlport.org
+webhostingrating.com/libs/safestl-be
+web.archive.org/web/20070714161114/http://www.3miasto.net/~chq/c/pitfalls.txt
+code.google.com/p/twisty/
+frotz.sourceforge.net
+www.csd.uwo.ca/Infocom/
