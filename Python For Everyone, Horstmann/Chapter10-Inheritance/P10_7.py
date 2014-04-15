@@ -1,3 +1,6 @@
+# Provide _ _repr_ _ methods for the Question and ChoiceQuestion classes.
+
+
 class Question():
     def __init__(self):
         self._text = ""
@@ -21,6 +24,9 @@ class Question():
     def display(self):
         print(self._text, end=' ')
 
+    def __repr__(self):
+        self.display()
+
 
 class ChoiceQuestion(Question):
     def __init__(self):
@@ -38,3 +44,6 @@ class ChoiceQuestion(Question):
         for i in range(len(self._choices)):
             choiceNumber = i + 1
             print("%d: %s" % (choiceNumber, self._choices[i]))
+
+    def __repr__(self):
+        self.display()

@@ -1,7 +1,12 @@
+# Add a method addText to the Question superclass and provide a different implementa­tion
+# of ChoiceQuestion that calls addText rather than storing a list of choices.
+
+
 class Question():
     def __init__(self):
         self._text = ""
         self._answer = ""
+        self._answer_number = 0
 
     def get_text(self):
         return self._text
@@ -18,6 +23,13 @@ class Question():
     def check_answer(self, response):
         return response == self._answer
 
+    def add_text(self, additional_text):
+        self._answer_number += 1
+        self._text += "{} {}".format(self.i, additional_text)
+
+    def get_answer_number(self):
+        return self._answer_number
+
     def display(self):
         print(self._text, end=' ')
 
@@ -25,16 +37,11 @@ class Question():
 class ChoiceQuestion(Question):
     def __init__(self):
         super().__init__()
-        self._choices = []
 
     def add_choice(self, choice, correct):
-        self._choices.append(choice)
+        super().add_text(choice)
         if correct:
-            choiceString = str(len(self._choices))
-            self.set_answer(choiceString)
+            self.set_answer(str(self._answer_number))
 
     def display(self):
         super().display()
-        for i in range(len(self._choices)):
-            choiceNumber = i + 1
-            print("%d: %s" % (choiceNumber, self._choices[i]))
