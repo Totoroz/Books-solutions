@@ -31,3 +31,12 @@ class TestCheckingsAccount():
         self.c.withdraw(100)
         eq_(False, self.c.is_free())
         ok_(199, self.c.getBalance())
+
+    def test_deposit_fee(self):
+        self.c.deposit(100)
+        self.c.deposit(100)
+        self.c.deposit(100)
+        ok_(300, self.c.getBalance())
+        self.c.deposit(100)
+        eq_(False, self.c.is_free())
+        ok_(399, self.c.getBalance())

@@ -46,14 +46,16 @@ class CheckingAccount(BankAccount):
     def __init__(self):
         super().__init__()
         self._withdrawals = 0
+        self._WITHDRAWAL_FEE = 1
 
-    # def deposit(self, amount):
-    #     if
+    def deposit(self, amount):
+        if self.is_free() is False:
+            super().withdraw(self._WITHDRAWAL_FEE)
+        super().deposit(amount)
 
     def withdraw(self, amount):
-        WITHDRAWAL_FEE = 1
         if self.is_free() is False:
-            super().withdraw(amount + WITHDRAWAL_FEE)
+            super().withdraw(amount + self._WITHDRAWAL_FEE)
         else:
             super().withdraw(amount)
 
