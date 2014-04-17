@@ -72,5 +72,5 @@ class AppointmentBook():
     def load(self):
         try:
             self._load("appointments_{}".format(self._get_current_date()))
-        except Exception:
+        except IOError:
             return False

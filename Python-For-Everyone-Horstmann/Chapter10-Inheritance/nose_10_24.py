@@ -74,4 +74,5 @@ class TestAppointmentBook():
 
     @raises(IOError)
     def test_load_non_existing_file(self):
-        self.apb._load("15251")
+        remove(self.filename)
+        self.apb.load()
