@@ -2,7 +2,7 @@
 
 
 # IMPORTS
-from p24 import Item
+from S24 import Item
 import unittest
 
 

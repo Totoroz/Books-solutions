@@ -2,7 +2,7 @@
 
 
 # IMPORTS
-from p20 import Person
+from S20 import Person
 import unittest
 
 
