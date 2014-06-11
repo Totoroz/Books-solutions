@@ -12,9 +12,9 @@ and
 would be considered identical. You will probably need one or more helper methods.*/
 
 public class P6_10 {
-    public static boolean sameSet(int[] a, int[] b) {
-        Set<Integer> tempSetA = new HashSet<Integer>(Arrays.asList(a));
-        Set<Integer> tempSetB = new HashSet<Integer>(Arrays.asList(b));
-        return tempSetA.equals(tempSetB);
-    }
+//    public static boolean sameSet(int[] a, int[] b) {
+//        Set<Integer> tempSetA = new HashSet<Integer>(Arrays.asList(a));
+//        Set<Integer> tempSetB = new HashSet<Integer>(Arrays.asList(b));
+//        return tempSetA.equals(tempSetB);
+//    }
 }
