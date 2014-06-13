@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -16,9 +17,10 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 public class BankAccountFrame extends JFrame {
     private static final int FRAME_WIDTH = 450;
-    private static final int FRAME_HEIGHT = 300;
+    private static final int FRAME_HEIGHT = 450;
     private JButton depositButton;
     private JButton withdrawButton;
+    private JLabel infoBalanceLabel;
     private JLabel currentBalanceLabel;
     private JLabel amountLabel;
     private JTextField amountField;
@@ -36,6 +38,15 @@ public class BankAccountFrame extends JFrame {
     }
 
     private void createComponents() {
+        this.createTextArea();
+        amountLabel = new JLabel("Number amount: ");
+        currentBalanceLabel = new JLabel(String.valueOf(balance));
+        this.createButtons();
+        this.createTextField();
+        infoBalanceLabel = new JLabel("Balance: ");
+    }
+
+    private void createButtons() {
         class AddRemoveAmountListener implements ActionListener {
             private String action;
 
@@ -53,16 +64,16 @@ public class BankAccountFrame extends JFrame {
                     }
                     if (action.equals("deposit")) {
                         balance += amount;
-                        historyTransactions.append("Deposited " + amount);
+                        historyTransactions.append("Deposited " + amount + "\n");
                         currentBalanceLabel.setText(String.valueOf(balance));
 
                     } else if (action.equals("withdraw")) {
                         if (balance - amount >= 0) {
                             balance -= amount;
-                            historyTransactions.append("Withdrew " + amount);
+                            historyTransactions.append("Withdrew " + amount + "\n");
                             currentBalanceLabel.setText(String.valueOf(balance));
                         } else {
-                            historyTransactions.append("Error: withdraw amount exceeds balance");
+                            historyTransactions.append("Error: withdraw amount exceeds balance\n");
                             throw new IllegalArgumentException();
                         }
                     }
@@ -73,42 +84,38 @@ public class BankAccountFrame extends JFrame {
                 }
             }
         }
-        this.createTextArea();
-        amountLabel = new JLabel("Number amount: ");
-        currentBalanceLabel = new JLabel(String.valueOf(balance));
         depositButton = new JButton("Deposit");
         ActionListener depositListener = new AddRemoveAmountListener("deposit");
         depositButton.addActionListener(depositListener);
         withdrawButton = new JButton("Withdraw");
         ActionListener withdrawListener = new AddRemoveAmountListener("withdraw");
         withdrawButton.addActionListener(withdrawListener);
-        this.createTextField();
     }
 
     private void createTextArea() {
-        final int ROWS = 10;
-        final int COLUMNS = 10;
+        final int ROWS = 25;
+        final int COLUMNS = 30;
         historyTransactions = new JTextArea(ROWS, COLUMNS);
         historyTransactions.setEditable(false);
     }
-    
+
     private void createTextField() {
-        final int FIELD_WIDTH = 15;
+        final int FIELD_WIDTH = 9;
         amountField = new JTextField(FIELD_WIDTH);
         amountField.setText("");
     }
 
     private void createPanel() {
-        JPanel panelTop = new JPanel();
-        panelTop.add(this.amountLabel);
-        panelTop.add(this.amountField);
-        panelTop.add(this.depositButton);
-        panelTop.add(this.withdrawButton);
-        panelTop.add(this.currentBalanceLabel);
-        JPanel panelBot = new JPanel();
-        panelBot.add(this.historyTransactions);
-        this.add(panelTop);
-        this.add(panelBot);
+        JPanel panel = new JPanel();
+        panel.add(this.withdrawButton);
+        panel.add(this.amountLabel);
+        panel.add(this.amountField);
+        panel.add(this.depositButton);
+        panel.add(this.infoBalanceLabel);
+        panel.add(this.currentBalanceLabel);
+        JScrollPane scrollHistoryTransactions = new JScrollPane(this.historyTransactions);
+        panel.add(scrollHistoryTransactions);
+        this.add(panel);
     }
 
     // just for the test
