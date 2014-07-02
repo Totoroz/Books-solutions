@@ -24,8 +24,8 @@ public class CashRegisterFrame extends JFrame {
     private JTextField addItemField;
     private JTextArea currentSaleArea;
     private JButton finalizeSaleButton;
-    private final static int FRAME_WIDTH = 400;
-    private final static int FRAME_HEIGHT = 300;
+    private final static int FRAME_WIDTH = 280;
+    private final static int FRAME_HEIGHT = 160;
 
     public CashRegisterFrame() {
         this.createComponents();
