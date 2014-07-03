@@ -38,5 +38,12 @@ public class SortingAlgorithmsDemo {
         System.out.println("Merge sort");
         stopwatch.showElapsedTime();
         stopwatch.reset();
+
+        stopwatch.start();
+        QuickSorter.sort(Arrays.copyOf(array, arraySize));
+        stopwatch.stop();
+        System.out.println("Quick sort");
+        stopwatch.showElapsedTime();
+        stopwatch.reset();
     }
 }

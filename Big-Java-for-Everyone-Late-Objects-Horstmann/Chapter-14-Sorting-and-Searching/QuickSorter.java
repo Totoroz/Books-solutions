@@ -1,5 +1,9 @@
 
 public class QuickSorter {
+    public static void sort(int[] array) {
+        sort(array, 0, array.length - 1);
+    }
+
     public static void sort(int[] array, int from, int to) {
         if (from >= to) {
             return;
