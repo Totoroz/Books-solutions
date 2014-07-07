@@ -1,7 +1,8 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Demo {
-    // ascending
     public static void selectionSort(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
             int minPos = i;
@@ -16,7 +17,6 @@ public class Demo {
         }
     }
 
-    // ascending
     public static void insertionSort(int[] array) {
         for (int i = 1; i < array.length; i++) {
             int next = array[i];
@@ -62,7 +62,6 @@ public class Demo {
             nextMergedPos += 1;
         }
 
-        // add one of the leftovers
         while (nextFirstPos < first.length) {
             array[nextMergedPos] = first[nextFirstPos];
             nextFirstPos += 1;
@@ -76,12 +75,108 @@ public class Demo {
         }
     }
 
+    public static void bubbleSort(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void quickSort(int[] array) {
+        quickSort(array, 0, array.length - 1);
+    }
+
+    public static void quickSort(int[] array, int from, int to) {
+        if (from >= to) {
+            return;
+        }
+        int pivot = array[from];
+        int i = from - 1;
+        int j = to + 1;
+        while (i < j) {
+            i += 1;
+            while (array[i] < pivot) {
+                i += 1;
+            }
+            j -= 1;
+            while (array[j] > pivot) {
+                j -= 1;
+            }
+            if (i < j) {
+                int temp = array[j];
+                array[j] = array[i];
+                array[i] = temp;
+            }
+        }
+        quickSort(array, from, j);
+        quickSort(array, j + 1, to);
+    }
+
+    public static int linearSearch(int[] array, int needle) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == needle) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static int binarySearch(int[] array, int needle) {
+        return binarySearch(array, 0, array.length - 1, needle);
+    }
+
+    public static int binarySearch(int[] array, int low, int high, int needle) {
+        if (low <= high) {
+            int mid = (low + high) / 2;
+            if (array[mid] == needle) {
+                return mid;
+            } else if (array[mid] < needle) {
+                return binarySearch(array, mid + 1, high, needle);
+            } else if (array[mid] > needle) {
+                return binarySearch(array, low, mid - 1, needle);
+            }
+        }
+        return -(low + 1);
+    }
+
+    public static void shellSort(int[] array) {
+        List<Integer> columns = new ArrayList<Integer>();
+        int c = 1;
+        while (c < array.length) {
+            columns.add(c);
+            c = 3 * c + 1;
+        }
+        for (int i = columns.size() - 1; i >= 0; i--) {
+            c = columns.get(i);
+            for (int k = 0; k < c; k++) {
+                columnSort(array, k, c);
+            }
+        }
+    }
+
+    private static void columnSort(int[] array, int k, int c) {
+        for (int i = k + c; i < array.length; i+= c) {
+            int next = array[i];
+            int j = i;
+            while (j >= c && array[j - c] > next) {
+                array[j] = array[j - c];
+                j -= c;
+            }
+            array[j] = next;
+        }
+    }
+
     public static void main(String[] args) {
-        int[] arr = ArrayUtils.randomIntArray(20, 100);
+        int[] arr = ArrayUtils.randomIntArray(100, 100);
         StopWatch stopwatch = new StopWatch();
         System.out.println(Arrays.toString(arr));
         stopwatch.start();
-        mergeSort(arr);
+        shellSort(arr);
         stopwatch.stop();
         stopwatch.showElapsedTime();
         System.out.println(Arrays.toString(arr));
