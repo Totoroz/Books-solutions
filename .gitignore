@@ -2,6 +2,7 @@
 ## Eclipse
 #################
 
+*.sqlite3
 *.pydevproject
 .project
 .metadata
