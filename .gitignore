@@ -2,6 +2,7 @@
 ## Eclipse
 #################
 
+book-example/
 *.sqlite3
 *.pydevproject
 .project
