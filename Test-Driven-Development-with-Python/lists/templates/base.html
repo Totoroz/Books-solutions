@@ -1,9 +1,10 @@
+{% load static from staticfiles %}
 <html>
     <head>
         <title>To-Do lists</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
-        <link rel="stylesheet" href="/static/base.css" media="screen">
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="{% static 'base.css'  %}" media="screen">
     </head>
 
     <body>
